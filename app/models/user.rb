@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validades_uniqueness_of :auth_token
-
-  before_create :generate_autentication_token!
+  
+  validates_uniqueness_of :auth_token
+  before_create :generate_authentication_token!
 
   def info
     "#{email} - #{created_ad} - Token: #{Devise.friendly_token}"
