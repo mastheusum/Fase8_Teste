@@ -86,7 +86,7 @@ RSpec.describe 'User request API', type: :request do
                 expect(response).to have_http_status(200)
             end
             it "[update] return new data for updated user" do
-                expect(json_body['email']).to eq(user_param[:email])
+                expect(json_body['email']).to eq(user_param[:email]) 
             end
         end
         context "invalid request to" do
