@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1, path: "/" do
       resources :users
       resources :sessions
+      resources :gains
     end
   end
 end

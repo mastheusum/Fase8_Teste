@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'User request API', type: :request do
-    let(:headers) { 
-        { "Accept" => "application/json", "Authorization" => user.auth_token }
-    }
     let!(:user_attributes) {
         {
             email: Faker::Internet.email,
@@ -19,6 +16,9 @@ RSpec.describe 'User request API', type: :request do
         )
     }
     let(:user_id) { user.id }
+    let(:headers) { 
+        { "Accept" => "application/json", "Authorization" => user.auth_token }
+    }
         
         before { host! "localhost:3000/api" }
         
