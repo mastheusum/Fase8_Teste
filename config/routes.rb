@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   devise_for :users, controllers: { sessions: "api/v1/sessions" }
 
   namespace :api, defaults: { format: :json } do
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
       resources :users
       resources :sessions
       resources :gains
+      resources :expensives
     end
   end
 end
